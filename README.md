@@ -1,4 +1,4 @@
-# Projeto Sparro**Watch** #
+## Projeto Sparro**Watch** ##
 [*Maker Faire Lisbon 2016*](http://makerfairelisbon.com/pt/)
 
 O projeto Sparro**Watch** consiste numa rede de ninhos georeferenciados, munidos de eletrónica que permite a deteção de incêndios florestais, bem como indicar com alguma precisão a sua localização e direção.
@@ -10,7 +10,7 @@ A comunicação é feita através de uma rede de malha<sup>[2](https://pt.wikipe
 O uso desta tecnologia era possivel sem a utilização de ninhos, porém os ninhos têm a vantagem de apoiar a nidificação e observação de animais. :wink:
 
 
-# SparroWatch
+## SparroWatch ##
 Maker Faire Lisbon 2016 Project
 
 By using mesh connected bird houses, forest temperature and humidity can be monitored.
