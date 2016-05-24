@@ -5,7 +5,8 @@
   "description": "where heatmaps get displayed for each mesh node location",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4"
   },
   "devDependencies": {},
   "scripts": {
