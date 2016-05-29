@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>SparroWatch Dashboard</title>
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-static-top">
@@ -36,11 +38,24 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<img src="http://placehold.it/1400?text=Map" alt="" class="img-responsive">
+				 <div id="map"></div>
 			</div>
 		</div>
 	</div>
 </body>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="node_modules/leaflet/dist/leaflet.js"></script>
+	<script type="text/javascript">
+		var map = new L.map('map');
+
+		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+		var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});		
+
+		// start the map in South-East England
+		map.setView(new L.LatLng(38.763, -9.101),12);
+		map.addLayer(osm);
+
+	</script>
 </html>
