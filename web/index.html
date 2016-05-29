@@ -31,11 +31,14 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 text-center">
-				<canvas id="humidade" width="250" height="250"></canvas>
+			<div class="col-md-4">
+				<div style="width:250px; float:right;"><canvas id="humidity" width="250" height="250"></canvas></div>
 			</div>
-			<div class="col-md-6 text-center">
-				<canvas id="temperatura" width="250" height="250"></canvas>
+			<div class="col-md-4">
+				<div style="width:250px; margin:0 auto 0 auto;"><canvas id="temperature" width="250" height="250"></canvas></div>
+			</div>
+			<div class="col-md-4">
+				<div style="width:250px; float:left;"><canvas id="co2" width="250" height="250"></canvas></div>				
 			</div>
 		</div>
 		<div class="row">
@@ -62,8 +65,8 @@
 		map.addLayer(osm);
 
 	// CHARTS
-		var chartHumidade = document.getElementById("humidade");
-		var humidade = new Chart(chartHumidade, {
+		var chartHumidity = document.getElementById("humidity");
+		var humidity = new Chart(chartHumidity, {
 	    	type: 'pie',
 		    data: {
 		        labels: ["Red", "Blue"],
@@ -81,10 +84,13 @@
 		        	]
 		        }]
 		    },
+		    options: {
+		    	responsive: true,
+		    }
 		});
 
-		var chartTemperatura = document.getElementById("temperatura");
-		var temperatura = new Chart(chartTemperatura, {
+		var chartTemperature = document.getElementById("temperature");
+		var temperature = new Chart(chartTemperature, {
 			type: 'bar',
 			data: {
 				labels: ["C",],
@@ -96,6 +102,28 @@
 						],
 				}]
 			}
-		})
+		});
+		var chartCo2 = document.getElementById("co2");
+		var Co2 = new Chart(chartCo2, {
+	    	type: 'pie',
+		    data: {
+		        labels: ["CO2", "Oxygen"],
+		        datasets: [{
+		        	data: [300, 50],
+		        	backgroundColor: [
+		        	    "#cccccc",
+		        	    "#36A2EB",
+		        	],
+		        	hoverBackgroundColor: [
+		        	    "#FF6384",
+		        	    "#36A2EB",
+		        	    "#FFCE56"
+		        	]
+		        }]
+		    },
+		    options: {
+		    	responsive: true,
+		    }
+		});
 	</script>
 </html>
