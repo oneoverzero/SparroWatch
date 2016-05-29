@@ -6,6 +6,7 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
     "gentelella": "^1.2.0",
     "jquery": "^2.2.4",
     "leaflet": "^0.7.7"
