@@ -12,7 +12,9 @@
     "jquery": "^2.2.4",
     "leaflet": "^0.7.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
