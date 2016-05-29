@@ -69,9 +69,9 @@
 		var humidity = new Chart(chartHumidity, {
 	    	type: 'pie',
 		    data: {
-		        labels: ["Red", "Blue"],
+		        labels: ["O2", "H2O"],
 		        datasets: [{
-		        	data: [300, 50],
+		        	data: [40, 60],
 		        	backgroundColor: [
 		        	    "#FF6384",
 		        	    "#36A2EB",
@@ -93,16 +93,30 @@
 		var temperature = new Chart(chartTemperature, {
 			type: 'bar',
 			data: {
-				labels: ["C",],
+				labels: ["Current", "Average"],
 				datasets: [{
-					label: "º C",
-					data: ["23"],
+					label: "Temperature",
+					data: [23, 18],
 					backgroundColor: [
 						"#FF0000",
+						"#FF0000",
 						],
-				}]
-			}
+				}],
+			},
+
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							max: 30,
+							min: 17,
+							stepSize: 1,
+						},
+					}],
+				}
+				},
 		});
+
 		var chartCo2 = document.getElementById("co2");
 		var Co2 = new Chart(chartCo2, {
 	    	type: 'pie',
