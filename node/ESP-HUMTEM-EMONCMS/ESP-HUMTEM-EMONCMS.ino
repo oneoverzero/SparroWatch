@@ -5,6 +5,11 @@
 
   Reads VCC value, posts it to emonCMS and sleeps for 'n' seconds
 */
+#include <ESP8266WiFi.h>
+extern "C" {
+  #include "user_interface.h"
+}
+
 #include <WiFiClientSecure.h>
 #include "credentials.h"
 #include "DHT.h"
