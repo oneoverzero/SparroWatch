@@ -217,6 +217,7 @@
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="node_modules/leaflet/dist/leaflet.js"></script>
+	<script src="node_modules/leaflet.heat/dist/leaflet-heat.js"></script>
 	<script src="node_modules/chart.js/dist/Chart.min.js"></script>
 	<script src="node_modules/gentelella/vendors/fastclick/lib/fastclick.js"></script>
 	<script src="node_modules/gentelella/production/js/custom.js"></script>
@@ -233,6 +234,13 @@
 
 		map.setView(new L.LatLng(38.7617806,-9.0956322),18);
 		map.addLayer(osm);
+
+	// MAP > HEATMAP
+
+		var heat = L.heatLayer([
+			[38.7617806, -9.0956322, 9], // lat, lng, intensity
+			[38.66, -9.10, 0.5],
+		], {radius: 25}).addTo(map);
 
 	// CHARTS
 		var chartHumidity = document.getElementById("humidity");
