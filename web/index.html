@@ -6,52 +6,105 @@
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/gentelella/production/css/custom.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<body>
-	<nav class="navbar navbar-default navbar-static-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="navbar-brand" href="#">SparroWatch</a>
-	        </div>
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
-	            <li><a href="#about">Configure Nests</a></li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	      </div>
-	</nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4">
-				<div style="width:250px; float:right;"><canvas id="humidity" width="250" height="250"></canvas></div>
+<body class="nav-md">
+
+<div class="container body">
+	<div class="main_container">
+		<div class="right_col">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Humidity</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+							<div class="clearfix"></div>
+
+						</div>
+						<div class="x_content"><canvas id="humidity" width="250" height="250"></canvas></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Temperature</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+							<div class="clearfix"></div>
+
+						</div>
+						<div class="x_content"><canvas id="temperature" width="250" height="250"></canvas></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>Carbon Dioxide</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+							<div class="clearfix"></div>
+
+						</div>
+						<div class="x_content"><canvas id="co2" width="250" height="250"></canvas></div>
+					</div>				
+				</div>
 			</div>
-			<div class="col-md-4">
-				<div style="width:250px; margin:0 auto 0 auto;"><canvas id="temperature" width="250" height="250"></canvas></div>
-			</div>
-			<div class="col-md-4">
-				<div style="width:250px; float:left;"><canvas id="co2" width="250" height="250"></canvas></div>				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				 <div id="map"></div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					 <div id="map"></div>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="node_modules/leaflet/dist/leaflet.js"></script>
 	<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+	<script src="node_modules/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+	<script src="node_modules/gentelella/production/js/custom.js"></script>
+
 	<script type="text/javascript">
 
 
