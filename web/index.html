@@ -228,12 +228,13 @@
 	// GET JSON
 	var dataUrl = 'https://emoncms.org/feed/data.json?id=124043&start=1464208200000&end=1464813900000&interval=900&skipmissing=0&limitinterval=1&apikey=' + apikey + '&callback=?';
 
-    $.ajax({
-        method: "GET",
-        url: dataUrl,
-	    }).success(function(result) {
-    		console.log(result);
-    	});
+	$.ajax({
+		method: "GET",
+		beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', "*");},
+		url: dataUrl,
+		}).success(function(result) {
+			console.log(result);
+		});
 
 	// MAP
 		var map = new L.map('map');
