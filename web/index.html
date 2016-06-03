@@ -227,21 +227,22 @@
 
 <script type="text/javascript">
 	// GET JSON
-	var dataUrl = 'https://emoncms.org/feed/data.json?id=124043&start=1464208200000&end=1464813900000&interval=900&skipmissing=0&limitinterval=1&apikey=' + apikey + '&callback=?';
+	var dataUrl = 'https://emoncms.org/feed/data.json?id=124043&start=1464615900000&end=1464813900000&interval=900&skipmissing=0&limitinterval=1&callback=?';
 
 	$.ajax({
-		method: "GET",
-		beforeSend: function(xhr) {
-			xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
-		},
-		url: dataUrl,
-	}).success(function(result) {
+		dataType: 'json',
+		url: fakeDataUrl,
+		contentType: 'application/json; charset=utf-8',
+	}).success(function(result){
+		console.log('reached "done"');
 		console.log(result);
+	}).fail( function(jqXHR){
+		console.log(jqXHR);
 	});
+
 
 	// MAP
 	var map = new L.map('map');
-
 	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 	var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 	var osm = new L.TileLayer(osmUrl, {
