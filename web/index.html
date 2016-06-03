@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>SparroWatch Dashboard</title>
@@ -10,325 +11,333 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+
 <body class="nav-md">
 
-<div class="container body">
-	<div class="main_container">
-		<div class="col-md-3 left_col">
-			<div class="navbar nav_title" style="border: 0;">
-				<a href="/" class="site_title"><i class="fa fa-tree"></i> <span>SparroWatch</span></a>
-			</div>
-		</div>
-		<!-- top nav -->
-		<div class="top_nav">
-
-		          <div class="nav_menu">
-		            <nav class="" role="navigation">
-		              <div class="nav toggle">
-		                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-		              </div>
-
-		              <ul class="nav navbar-nav navbar-right">
-		                <li class="">
-		                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		                    <img src="node_modules/gentelella/production/images/img.jpg" alt="">Manfred Mancx
-		                    <span class=" fa fa-angle-down"></span>
-		                  </a>
-		                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-		                    <li><a href="javascript:;">  Profile</a>
-		                    </li>
-		                    <li>
-		                      <a href="javascript:;">
-		                        <span class="badge bg-red pull-right">50%</span>
-		                        <span>Settings</span>
-		                      </a>
-		                    </li>
-		                    <li>
-		                      <a href="javascript:;">Help</a>
-		                    </li>
-		                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-		                    </li>
-		                  </ul>
-		                </li>
-
-		                <li role="presentation" class="dropdown">
-		                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-		                    <i class="fa fa-envelope-o"></i>
-		                    <span class="badge bg-green">6</span>
-		                  </a>
-		                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-		                    <li>
-		                      <a>
-		                        <span class="image">
-		                                          <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
-		                                      </span>
-		                        <span>
-		                                          <span>Aineko</span>
-		                        <span class="time">3 mins ago</span>
-		                        </span>
-		                        <span class="message">
-		                                          There is no escaping me Manfred. See you soon. 
-		                                      </span>
-		                      </a>
-		                    </li>
-		                    <li>
-		                      <a>
-		                        <span class="image">
-		                                          <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
-		                                      </span>
-		                        <span>
-		                                          <span>Bob Franklin</span>
-		                        <span class="time">3 mins ago</span>
-		                        </span>
-		                        <span class="message">
-		                                          MANFRED! Aineko as escaped. Contact me at once.
-		                                      </span>
-		                      </a>
-		                    </li>
-		                    <li>
-		                      <a>
-		                        <span class="image">
-		                                          <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
-		                                      </span>
-		                        <span>
-		                                          <span>Annette Dimarcos</span>
-		                        <span class="time">3 mins ago</span>
-		                        </span>
-		                        <span class="message">
-		                                          There is a party today and I know just what high heels I want you to wear this time...
-		                                      </span>
-		                      </a>
-		                    </li>
-		                    <li>
-		                      <a>
-		                        <span class="image">
-		                                          <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
-		                                      </span>
-		                        <span>
-		                                          <span>Pamela</span>
-		                        <span class="time">3 mins ago</span>
-		                        </span>
-		                        <span class="message">
-		                                          I am going to find you Manfred. You know what they say, only death and taxes are certain.
-		                                      </span>
-		                      </a>
-		                    </li>
-		                    <li>
-		                      <div class="text-center">
-		                        <a>
-		                          <strong>See All Alerts</strong>
-		                          <i class="fa fa-angle-right"></i>
-		                        </a>
-		                      </div>
-		                    </li>
-		                  </ul>
-		                </li>
-
-		              </ul>
-		            </nav>
-		          </div>
-
-		        </div>
-		<!-- top nav / -->
-		<div class="right_col">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="x_panel">
-						<div class="x_title">
-							<h2>Humidity</h2>
-								<ul class="nav navbar-right panel_toolbox">
-									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-									</li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Settings 1</a>
-											</li>
-											<li><a href="#">Settings 2</a>
-											</li>
-										</ul>
-									</li>
-									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
-								</ul>
-							<div class="clearfix"></div>
-
-						</div>
-						<div class="x_content"><canvas id="humidity" width="250" height="250"></canvas></div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="x_panel">
-						<div class="x_title">
-							<h2>Temperature</h2>
-								<ul class="nav navbar-right panel_toolbox">
-									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-									</li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Settings 1</a>
-											</li>
-											<li><a href="#">Settings 2</a>
-											</li>
-										</ul>
-									</li>
-									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
-								</ul>
-							<div class="clearfix"></div>
-
-						</div>
-						<div class="x_content"><canvas id="temperature" width="250" height="250"></canvas></div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="x_panel">
-						<div class="x_title">
-							<h2>Carbon Dioxide</h2>
-								<ul class="nav navbar-right panel_toolbox">
-									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-									</li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Settings 1</a>
-											</li>
-											<li><a href="#">Settings 2</a>
-											</li>
-										</ul>
-									</li>
-									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
-								</ul>
-							<div class="clearfix"></div>
-
-						</div>
-						<div class="x_content"><canvas id="co2" width="250" height="250"></canvas></div>
-					</div>				
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="navbar nav_title" style="border: 0;">
+					<a href="/" class="site_title"><i class="fa fa-tree"></i> <span>SparroWatch</span></a>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-					 <div id="map"></div>
+			<!-- top nav -->
+			<div class="top_nav">
+
+				<div class="nav_menu">
+					<nav class="" role="navigation">
+						<div class="nav toggle">
+							<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+						</div>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li class="">
+								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<img src="node_modules/gentelella/production/images/img.jpg" alt="">Manfred Mancx
+									<span class=" fa fa-angle-down"></span>
+								</a>
+								<ul class="dropdown-menu dropdown-usermenu pull-right">
+									<li><a href="javascript:;">  Profile</a>
+									</li>
+									<li>
+										<a href="javascript:;">
+											<span class="badge bg-red pull-right">50%</span>
+											<span>Settings</span>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;">Help</a>
+									</li>
+									<li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+									</li>
+								</ul>
+							</li>
+
+							<li role="presentation" class="dropdown">
+								<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+									<i class="fa fa-envelope-o"></i>
+									<span class="badge bg-green">6</span>
+								</a>
+								<ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+									<li>
+										<a>
+											<span class="image">
+												  <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
+											  </span>
+											<span>
+												  <span>Aineko</span>
+											<span class="time">3 mins ago</span>
+											</span>
+											<span class="message">
+												  There is no escaping me Manfred. See you soon. 
+											  </span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<span class="image">
+												  <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
+											  </span>
+											<span>
+												  <span>Bob Franklin</span>
+											<span class="time">3 mins ago</span>
+											</span>
+											<span class="message">
+												  MANFRED! Aineko as escaped. Contact me at once.
+											  </span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<span class="image">
+												  <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
+											  </span>
+											<span>
+												  <span>Annette Dimarcos</span>
+											<span class="time">3 mins ago</span>
+											</span>
+											<span class="message">
+												  There is a party today and I know just what high heels I want you to wear this time...
+											  </span>
+										</a>
+									</li>
+									<li>
+										<a>
+											<span class="image">
+												  <img src="node_modules/gentelella/production/images/img.jpg" alt="Profile Image">
+											  </span>
+											<span>
+												  <span>Pamela</span>
+											<span class="time">3 mins ago</span>
+											</span>
+											<span class="message">
+												  I am going to find you Manfred. You know what they say, only death and taxes are certain.
+											  </span>
+										</a>
+									</li>
+									<li>
+										<div class="text-center">
+											<a>
+												<strong>See All Alerts</strong>
+												<i class="fa fa-angle-right"></i>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+					</nav>
+				</div>
+
+			</div>
+			<!-- top nav / -->
+			<div class="right_col">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Humidity</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+								<div class="clearfix"></div>
+
+							</div>
+							<div class="x_content"><canvas id="humidity" width="250" height="250"></canvas></div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Temperature</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+								<div class="clearfix"></div>
+
+							</div>
+							<div class="x_content"><canvas id="temperature" width="250" height="250"></canvas></div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Carbon Dioxide</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+								</ul>
+								<div class="clearfix"></div>
+
+							</div>
+							<div class="x_content"><canvas id="co2" width="250" height="250"></canvas></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div id="map"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </body>
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="node_modules/leaflet/dist/leaflet.js"></script>
-	<script src="node_modules/leaflet.heat/dist/leaflet-heat.js"></script>
-	<script src="node_modules/chart.js/dist/Chart.min.js"></script>
-	<script src="node_modules/gentelella/vendors/fastclick/lib/fastclick.js"></script>
-	<script src="node_modules/gentelella/build/js/custom.js"></script>
-	<script src="assets/js/auth.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/leaflet/dist/leaflet.js"></script>
+<script src="node_modules/leaflet.heat/dist/leaflet-heat.js"></script>
+<script src="node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="node_modules/gentelella/vendors/fastclick/lib/fastclick.js"></script>
+<script src="node_modules/gentelella/build/js/custom.js"></script>
+<script src="assets/js/auth.js"></script>
 
-	<script type="text/javascript">
-
+<script type="text/javascript">
 	// GET JSON
 	var dataUrl = 'https://emoncms.org/feed/data.json?id=124043&start=1464208200000&end=1464813900000&interval=900&skipmissing=0&limitinterval=1&apikey=' + apikey + '&callback=?';
 
 	$.ajax({
 		method: "GET",
-		beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', "*");},
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader('Access-Control-Allow-Origin', "*");
+		},
 		url: dataUrl,
-		}).success(function(result) {
-			console.log(result);
-		});
+	}).success(function(result) {
+		console.log(result);
+	});
 
 	// MAP
-		var map = new L.map('map');
+	var map = new L.map('map');
 
-		var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-		var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-		var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 19, attribution: osmAttrib});		
+	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {
+		minZoom: 8,
+		maxZoom: 19,
+		attribution: osmAttrib
+	});
 
-		map.setView(new L.LatLng(38.7617806,-9.0956322),18);
-		map.addLayer(osm);
+	map.setView(new L.LatLng(38.7617806, -9.0956322), 18);
+	map.addLayer(osm);
 
 	// MAP > HEATMAP
 
-		var heat = L.heatLayer([
-			[38.7617806, -9.095, 9	], // lat, lng, intensity
-			[38.5661111, -9.110, 0.5],
-			[38.8017806, -9.090, 0.1	], // lat, lng, intensity
-			[38.8061111, -9.127, 2],
-		], {radius: 25}).addTo(map);
+	var heat = L.heatLayer([
+		[38.7617806, -9.095, 9], // lat, lng, intensity
+		[38.5661111, -9.110, 0.5],
+		[38.8017806, -9.090, 0.1], // lat, lng, intensity
+		[38.8061111, -9.127, 2],
+	], {
+		radius: 25
+	}).addTo(map);
 
 	// CHARTS
-		var chartHumidity = document.getElementById("humidity");
-		var humidity = new Chart(chartHumidity, {
-	    	type: 'pie',
-		    data: {
-		        labels: ["O2", "H2O"],
-		        datasets: [{
-		        	data: [40, 60],
-		        	backgroundColor: [
-		        	    "#FF6384",
-		        	    "#36A2EB",
-		        	    "#FFCE56"
-		        	],
-		        	hoverBackgroundColor: [
-		        	    "#FF6384",
-		        	    "#36A2EB",
-		        	    "#FFCE56"
-		        	]
-		        }]
-		    },
-		    options: {
-		    	responsive: true,
-		    }
-		});
+	var chartHumidity = document.getElementById("humidity");
+	var humidity = new Chart(chartHumidity, {
+		type: 'pie',
+		data: {
+			labels: ["O2", "H2O"],
+			datasets: [{
+				data: [40, 60],
+				backgroundColor: [
+					"#FF6384",
+					"#36A2EB",
+					"#FFCE56"
+				],
+				hoverBackgroundColor: [
+					"#FF6384",
+					"#36A2EB",
+					"#FFCE56"
+				]
+			}]
+		},
+		options: {
+			responsive: true,
+		}
+	});
 
-		var chartTemperature = document.getElementById("temperature");
-		var temperature = new Chart(chartTemperature, {
-			type: 'bar',
-			data: {
-				labels: ["Current", "Average"],
-				datasets: [{
-					label: "Temperature",
-					data: [23, 18],
-					backgroundColor: [
-						"#FF0000",
-						"#FF0000",
-						],
+	var chartTemperature = document.getElementById("temperature");
+	var temperature = new Chart(chartTemperature, {
+		type: 'bar',
+		data: {
+			labels: ["Current", "Average"],
+			datasets: [{
+				label: "Temperature",
+				data: [23, 18],
+				backgroundColor: [
+					"#FF0000",
+					"#FF0000",
+				],
+			}],
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						max: 30,
+						min: 17,
+						stepSize: 1,
+					},
 				}],
-			},
+			}
+		},
+	});
 
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							max: 30,
-							min: 17,
-							stepSize: 1,
-						},
-					}],
-				}
-				},
-		});
+	var chartCo2 = document.getElementById("co2");
+	var Co2 = new Chart(chartCo2, {
+		type: 'pie',
+		data: {
+			labels: ["CO2", "Oxygen"],
+			datasets: [{
+				data: [300, 50],
+				backgroundColor: [
+					"#cccccc",
+					"#36A2EB",
+				],
+				hoverBackgroundColor: [
+					"#FF6384",
+					"#36A2EB",
+					"#FFCE56"
+				]
+			}]
+		},
+		options: {
+			responsive: true,
+		}
+	});
+</script>
 
-		var chartCo2 = document.getElementById("co2");
-		var Co2 = new Chart(chartCo2, {
-	    	type: 'pie',
-		    data: {
-		        labels: ["CO2", "Oxygen"],
-		        datasets: [{
-		        	data: [300, 50],
-		        	backgroundColor: [
-		        	    "#cccccc",
-		        	    "#36A2EB",
-		        	],
-		        	hoverBackgroundColor: [
-		        	    "#FF6384",
-		        	    "#36A2EB",
-		        	    "#FFCE56"
-		        	]
-		        }]
-		    },
-		    options: {
-		    	responsive: true,
-		    }
-		});
-	</script>
 </html>
