@@ -1,0 +1,5 @@
+char host[]="emoncms.org",
+     apikey[]="",
+     node_id[]="9000",
+     ssid[]="",
+     password[]="";
