@@ -6,17 +6,17 @@
     "longitude": "-9.095517",
     "carbondioxide": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
-      "value": 0.2009
+      "reading": 20.9
     }, {
       "timestamp": "2016-06-17T12:46:10.155Z",
-      "value": 0.1009
+      "reading": 0.1009
     }],
     "humidity": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
-      "reading": 0.1
+      "reading": 10
     }, {
       "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 0.2
+      "reading": 20
     }],
     "temperature": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
@@ -32,17 +32,17 @@
     "longitude": "-9.093897",
     "carbondioxide": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
-      "value": 0.2009
+      "reading": 20.9
     }, {
       "timestamp": "2016-06-17T12:46:10.155Z",
-      "value": 0.1009
+      "reading": 10.09
     }],
     "humidity": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
-      "reading": 0.1
+      "reading": 10
     }, {
       "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 0.2
+      "reading": 20
     }],
     "temperature": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
@@ -59,17 +59,17 @@
       "longitude": "-9.094873",
       "carbondioxide": [{
         "timestamp": "2016-06-18T12:46:10.155Z",
-        "value": 0.2009
+        "reading": 20.01
       }, {
         "timestamp": "2016-06-17T12:46:10.155Z",
-        "value": 0.1009
+        "reading": 10.01
       }],
       "humidity": [{
         "timestamp": "2016-06-18T12:46:10.155Z",
-        "reading": 0.1
+        "reading": 11
       }, {
         "timestamp": "2016-06-17T12:46:10.155Z",
-        "reading": 0.2
+        "reading": 21
       }],
       "temperature": [{
         "timestamp": "2016-06-18T12:46:10.155Z",

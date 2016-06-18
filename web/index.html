@@ -134,7 +134,7 @@
 			<!-- top nav / -->
 			<div class="right_col">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="x_panel">
 							<div class="x_title">
 								<h2>Humidity</h2>
@@ -158,7 +158,7 @@
 							<div class="x_content"><canvas id="humidity" width="250" height="250"></canvas></div>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<div class="x_panel">
 							<div class="x_title">
 								<h2>Temperature</h2>
@@ -182,6 +182,8 @@
 							<div class="x_content"><canvas id="temperature" width="250" height="250"></canvas></div>
 						</div>
 					</div>
+					<!-- 
+					We don't have a CO2 sensor right now
 					<div class="col-md-4">
 						<div class="x_panel">
 							<div class="x_title">
@@ -206,6 +208,7 @@
 							<div class="x_content"><canvas id="co2" width="250" height="250"></canvas></div>
 						</div>
 					</div>
+					-->
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -254,27 +257,29 @@
 
 		// get average temperature reading
 		var temperature_array = [];
-		for (var i = 0; i < data.length; i++){
-			temperature_array.push(data[i].temperature[0].reading)
-		}
-		console.log(temperature_array)
+		for (var i = 0; i < data.length; i++){ temperature_array.push(data[i].temperature[0].reading) }
 		var current_temperature = getAverage(temperature_array);
-		console.log(current_temperature)
+		console.log('temperature: ' + current_temperature)
+
+		buildTemperatureChart(current_temperature);
 
 		// get average humidity reading
 		var humidity_array = [];
-		for (var i = 0; i < data.length; i++){
-			humidity_array.push(data[i].humidity[0].reading)
-		}
-
+		for (var i = 0; i < data.length; i++){ humidity_array.push(data[i].humidity[0].reading) }
 		var current_humidity = getAverage(humidity_array);
+		console.log('humidity: ' + current_humidity)
+
+		buildHumidityChart(current_humidity);
+
 		// get average carbondioxide reading
 		var carbondioxide_array = [];
-		for (var i = 0; i < data.length; i++){
-			carbondioxide_array.push(data[i].carbondioxide[0].reading)
-		}
+		for (var i = 0; i < data.length; i++){ carbondioxide_array.push(data[i].carbondioxide[0].reading) }
 		var current_carbondioxide = getAverage(carbondioxide_array);
+		console.log('carbondioxide: ' + current_carbondioxide)
 		
+		// we don't need this for now.
+		// buildCO2Chart(current_carbondioxide);
+
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
@@ -298,23 +303,21 @@
 	}
 
 	// CHARTS
-	function buildCharts(){
+	function buildHumidityChart(humidity_value){
 		var chartHumidity = document.getElementById("humidity");
 		var humidity = new Chart(chartHumidity, {
 			type: 'pie',
 			data: {
-				labels: ["O2", "H2O"],
+				labels: ["H2O", "O2"],
 				datasets: [{
-					data: [40],
+					data: [humidity_value, 100 - humidity_value],
 					backgroundColor: [
 						"#FF6384",
 						"#36A2EB",
-						"#FFCE56"
 					],
 					hoverBackgroundColor: [
 						"#FF6384",
 						"#36A2EB",
-						"#FFCE56"
 					]
 				}]
 			},
@@ -322,7 +325,9 @@
 				responsive: true,
 			}
 		});
+	}
 
+	function buildTemperatureChart(temperature_value){
 		var chartTemperature = document.getElementById("temperature");
 		var temperature = new Chart(chartTemperature, {
 			type: 'bar',
@@ -330,7 +335,7 @@
 				labels: ["Current", "Average"],
 				datasets: [{
 					label: "Temperature",
-					data: [23, 18],
+					data: [temperature_value, 18],
 					backgroundColor: [
 						"#FF0000",
 						"#FF0000",
@@ -349,14 +354,16 @@
 				}
 			},
 		});
+	}
 
+	function buildCO2Chart(carbondioxide_value){
 		var chartCo2 = document.getElementById("co2");
 		var Co2 = new Chart(chartCo2, {
 			type: 'pie',
 			data: {
 				labels: ["CO2", "Oxygen"],
 				datasets: [{
-					data: [300, 50],
+					data: [carbondioxide_value, carbondioxide_value - 100],
 					backgroundColor: [
 						"#cccccc",
 						"#36A2EB",
@@ -364,7 +371,6 @@
 					hoverBackgroundColor: [
 						"#FF6384",
 						"#36A2EB",
-						"#FFCE56"
 					]
 				}]
 			},
@@ -372,7 +378,7 @@
 				responsive: true,
 			}
 		});
-}
+	}
 </script>
 
 </html>
