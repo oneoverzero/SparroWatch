@@ -227,16 +227,15 @@
 
 <script type="text/javascript">
 	// GET JSON
-	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/demo.json';
+	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/demo.json';
 
 	$.ajax({
-		dataType: 'json',
+		dataType: 'jsonp',
 		url: dataUrl,
 		contentType: 'application/json; charset=utf-8',
-	}).success(function(result){
-		console.log('reached "done"');
-		console.log(result);
-		
+	}).success(function(data){
+		var temperatureData = data.node[0].node_name
+		console.log(temperatureData)
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
