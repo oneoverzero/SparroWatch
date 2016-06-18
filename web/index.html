@@ -230,40 +230,39 @@
 	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/demo.json';
 
 	$.ajax({
-		dataType: 'jsonp',
+		method: "GET",
+		dataType: 'json',
 		url: dataUrl,
-		contentType: 'application/json; charset=utf-8',
-	}).success(function(data){
-		var temperatureData = data.node[0].node_name
-		console.log(temperatureData)
+	}).always(function(data){
+		console.log(data)
+		var nodes = [];
+		for (var i = 0; i < data.length; i++) {
+			var array = [data[i].latitude, data[i].longitude, data[i].temperature[0].reading]
+			nodes.push(array);
+		}
+		console.log(nodes);
+		buildMap(nodes);
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
 
-
 	// MAP
-	var map = new L.map('map');
-	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-	var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-	var osm = new L.TileLayer(osmUrl, {
-		minZoom: 8,
-		maxZoom: 19,
-		attribution: osmAttrib
-	});
+	function buildMap(nodes){
+		var map = new L.map('map');
+		var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+		var osm = new L.TileLayer(osmUrl, {
+			minZoom: 8,
+			maxZoom: 19,
+			attribution: osmAttrib
+		});
 
-	map.setView(new L.LatLng(38.7617806, -9.0956322), 18);
-	map.addLayer(osm);
+		map.setView(new L.LatLng(38.7617806, -9.0956322), 18);
+		map.addLayer(osm);
 
-	// MAP > HEATMAP
-
-	var heat = L.heatLayer([
-		[38.7617806, -9.095, 9], // lat, lng, intensity
-		[38.5661111, -9.110, 0.5],
-		[38.8017806, -9.090, 0.1], // lat, lng, intensity
-		[38.8061111, -9.127, 2],
-	], {
-		radius: 25
-	}).addTo(map);
+		// MAP > HEATMAP
+		var heat = L.heatLayer(nodes, { radius: 25 }).addTo(map);
+	}
 
 	// CHARTS
 	var chartHumidity = document.getElementById("humidity");
