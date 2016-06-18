@@ -241,17 +241,40 @@
 		}
 		buildMap(nodes);
 
+		// get average of readings
+		function getAverage(variable_array) {
+			var sum = 0;
+			for (var i = 0; i < variable_array.length; i++){
+				sum += parseInt( variable_array[i], 10 )
+			}
+
+			var average = sum / variable_array.length;
+			return average;
+		}
+
+		// get average temperature reading
 		var temperature_array = [];
 		for (var i = 0; i < data.length; i++){
 			temperature_array.push(data[i].temperature[0].reading)
 		}
 		console.log(temperature_array)
-		var sum = 0;
-		for (var i = 0; i < temperature_array.length; i++){
-			sum += parseInt( temperature_array[i], 10 )
+		var current_temperature = getAverage(temperature_array);
+		console.log(current_temperature)
+
+		// get average humidity reading
+		var humidity_array = [];
+		for (var i = 0; i < data.length; i++){
+			humidity_array.push(data[i].humidity[0].reading)
 		}
 
-		var current_temperature = sum / temperature_array.length;
+		var current_humidity = getAverage(humidity_array);
+		// get average carbondioxide reading
+		var carbondioxide_array = [];
+		for (var i = 0; i < data.length; i++){
+			carbondioxide_array.push(data[i].carbondioxide[0].reading)
+		}
+		var current_carbondioxide = getAverage(carbondioxide_array);
+		
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
