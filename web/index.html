@@ -234,14 +234,24 @@
 		dataType: 'json',
 		url: dataUrl,
 	}).always(function(data){
-		console.log(data)
 		var nodes = [];
 		for (var i = 0; i < data.length; i++) {
 			var array = [data[i].latitude, data[i].longitude, data[i].temperature[0].reading]
 			nodes.push(array);
 		}
-		console.log(nodes);
 		buildMap(nodes);
+
+		var temperature_array = [];
+		for (var i = 0; i < data.length; i++){
+			temperature_array.push(data[i].temperature[0].reading)
+		}
+		console.log(temperature_array)
+		var sum = 0;
+		for (var i = 0; i < temperature_array.length; i++){
+			sum += parseInt( temperature_array[i], 10 )
+		}
+
+		var current_temperature = sum / temperature_array.length;
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
@@ -265,79 +275,81 @@
 	}
 
 	// CHARTS
-	var chartHumidity = document.getElementById("humidity");
-	var humidity = new Chart(chartHumidity, {
-		type: 'pie',
-		data: {
-			labels: ["O2", "H2O"],
-			datasets: [{
-				data: [40, 60],
-				backgroundColor: [
-					"#FF6384",
-					"#36A2EB",
-					"#FFCE56"
-				],
-				hoverBackgroundColor: [
-					"#FF6384",
-					"#36A2EB",
-					"#FFCE56"
-				]
-			}]
-		},
-		options: {
-			responsive: true,
-		}
-	});
-
-	var chartTemperature = document.getElementById("temperature");
-	var temperature = new Chart(chartTemperature, {
-		type: 'bar',
-		data: {
-			labels: ["Current", "Average"],
-			datasets: [{
-				label: "Temperature",
-				data: [23, 18],
-				backgroundColor: [
-					"#FF0000",
-					"#FF0000",
-				],
-			}],
-		},
-		options: {
-			scales: {
-				yAxes: [{
-					ticks: {
-						max: 30,
-						min: 17,
-						stepSize: 1,
-					},
-				}],
+	function buildCharts(){
+		var chartHumidity = document.getElementById("humidity");
+		var humidity = new Chart(chartHumidity, {
+			type: 'pie',
+			data: {
+				labels: ["O2", "H2O"],
+				datasets: [{
+					data: [40],
+					backgroundColor: [
+						"#FF6384",
+						"#36A2EB",
+						"#FFCE56"
+					],
+					hoverBackgroundColor: [
+						"#FF6384",
+						"#36A2EB",
+						"#FFCE56"
+					]
+				}]
+			},
+			options: {
+				responsive: true,
 			}
-		},
-	});
+		});
 
-	var chartCo2 = document.getElementById("co2");
-	var Co2 = new Chart(chartCo2, {
-		type: 'pie',
-		data: {
-			labels: ["CO2", "Oxygen"],
-			datasets: [{
-				data: [300, 50],
-				backgroundColor: [
-					"#cccccc",
-					"#36A2EB",
-				],
-				hoverBackgroundColor: [
-					"#FF6384",
-					"#36A2EB",
-					"#FFCE56"
-				]
-			}]
-		},
-		options: {
-			responsive: true,
-		}
-	});
+		var chartTemperature = document.getElementById("temperature");
+		var temperature = new Chart(chartTemperature, {
+			type: 'bar',
+			data: {
+				labels: ["Current", "Average"],
+				datasets: [{
+					label: "Temperature",
+					data: [23, 18],
+					backgroundColor: [
+						"#FF0000",
+						"#FF0000",
+					],
+				}],
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							max: 30,
+							min: 17,
+							stepSize: 1,
+						},
+					}],
+				}
+			},
+		});
+
+		var chartCo2 = document.getElementById("co2");
+		var Co2 = new Chart(chartCo2, {
+			type: 'pie',
+			data: {
+				labels: ["CO2", "Oxygen"],
+				datasets: [{
+					data: [300, 50],
+					backgroundColor: [
+						"#cccccc",
+						"#36A2EB",
+					],
+					hoverBackgroundColor: [
+						"#FF6384",
+						"#36A2EB",
+						"#FFCE56"
+					]
+				}]
+			},
+			options: {
+				responsive: true,
+			}
+		});
+}
 </script>
 
 </html>
