@@ -239,7 +239,7 @@
 	}).always(function(data){
 		var nodes = [];
 		for (var i = 0; i < data.length; i++) {
-			var array = [data[i].latitude, data[i].longitude, data[i].temperature[0].reading]
+			var array = [data[i].latitude, data[i].longitude, parseInt(data[i].temperature[0].reading, 10) / 100] //we divide temperature by 100 to build the heatmap with a correponding gradient
 			nodes.push(array);
 		}
 		buildMap(nodes);
@@ -299,7 +299,14 @@
 		map.addLayer(osm);
 
 		// MAP > HEATMAP
-		var heat = L.heatLayer(nodes, { radius: 25 }).addTo(map);
+		console.log(nodes)
+		var heat = L.heatLayer(nodes, { 
+			radius: 50,
+			max: 0.5,
+			maxZoom: 8,
+			gradient: { 0.1: 'blue', 0.20: 'orange', 0.40: 'red' },
+			
+		 }).addTo(map);
 	}
 
 	// CHARTS

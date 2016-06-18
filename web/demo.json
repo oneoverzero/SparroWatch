@@ -46,7 +46,7 @@
     }],
     "temperature": [{
       "timestamp": "2016-06-18T12:46:10.155Z",
-      "reading": 24
+      "reading": 20
     }, {
       "timestamp": "2016-06-17T12:46:10.155Z",
       "reading": 23
@@ -73,10 +73,10 @@
       }],
       "temperature": [{
         "timestamp": "2016-06-18T12:46:10.155Z",
-        "reading": 21
+        "reading": 30
       }, {
         "timestamp": "2016-06-17T12:46:10.155Z",
-        "reading": 23
+        "reading": 10
       }]
     }
 ]
