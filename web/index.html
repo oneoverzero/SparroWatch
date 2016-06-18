@@ -227,7 +227,7 @@
 
 <script type="text/javascript">
 	// GET JSON
-	var dataUrl = 'https://emoncms.org/feed/data.json?id=124043&start=1464615900000&end=1464813900000&interval=900&skipmissing=0&limitinterval=1&callback=?';
+	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/demo.json';
 
 	$.ajax({
 		dataType: 'json',
@@ -236,6 +236,7 @@
 	}).success(function(result){
 		console.log('reached "done"');
 		console.log(result);
+		
 	}).fail( function(jqXHR){
 		console.log(jqXHR);
 	});
