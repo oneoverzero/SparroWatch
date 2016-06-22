@@ -1,0 +1,7 @@
+#map { height: 720px; }
+
+canvas#humidade{
+	width: 250px;
+	height: 250px;
+	box-sizing: border-box;
+}

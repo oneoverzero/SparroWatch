@@ -1,0 +1,26 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "where heatmaps get displayed for each mesh node location",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "chart.js": "^2.1.4",
+    "font-awesome": "^4.6.3",
+    "gentelella": "^1.3.0",
+    "jquery": "^2.2.4",
+    "leaflet": "^0.7.7",
+    "leaflet.heat": "^0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OOZLabs",
+  "license": "ISC"
+}
