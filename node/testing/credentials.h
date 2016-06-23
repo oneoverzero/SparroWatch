@@ -2,12 +2,11 @@
    Personal definitions
 */
 
-#define ssid     "your_ap_ssid"
-#define password "your_ap_password"
+#define ssid     "ldna"
+#define password "c0defade69"
 #define host     "emoncms.org"
-#define apikey   "your_apikey"
+#define apikey   "4cb13d634ddebcf1de3c71f265adcea4"
 #define node     "1"
-
 /*
    Helper defines
 */

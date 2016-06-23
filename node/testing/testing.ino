@@ -3,9 +3,12 @@
   (C) 2016 OOZLabs
   written by luisfcorreia
 
-  Reads VCC value, posts it to emonCMS and sleeps for 'n' seconds
+  Reads VCC from ESP8266 internal ADC,
+  reads humidity and temperature from DHT22
+  and posts it to emonCMS and sleeps for 'n' seconds
 */
 
+#include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include "DHT.h" // from Adafruit Github
 
@@ -22,7 +25,7 @@ ADC_MODE(ADC_VCC);
 
 // DHT pin and type
 #define DHTPIN 4
-#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 
 // sleep intervals in us
 #define minutes 1
@@ -39,6 +42,16 @@ WiFiClientSecure client;
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
+
+  Serial.begin(115200);
+  Serial.println("Init serial 4 debug");
+
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
   // read vcc voltage with ADC
   voltage = ESP.getVcc() / 1024.0;
 
@@ -47,6 +60,7 @@ void setup() {
   count = 5;
   while (count >= 0) {
     delay(500);
+    Serial.println("Read DHT");
     h = dht.readHumidity();
     t = dht.readTemperature();
     if (!isnan(h) || !isnan(t)) {
@@ -58,19 +72,21 @@ void setup() {
 
   // create final URL
   url = baseurl + "{espvcc:" + voltage + humtem + "}";
+  Serial.println(url);
 
-  // try post data to EmonCMS
   count = 5;
   while (count >= 0) {
-    if (client.connect(host, 443)) {
+    delay(500);
+
+    if (!client.connect(host, 443)) {
+      Serial.println("Could not connect");
+    } else {
       break;
     }
-    delay(500);
     count = count - 1;
   }
-  if (count == 0){
-    return;
-  }
+
+  Serial.println("Send stuff");
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
                "User-Agent: SparroWatch\r\n" +
@@ -78,12 +94,15 @@ void setup() {
   while (client.connected()) {
     String line = client.readStringUntil('\n');
     if (line == "\r") {
+      Serial.println("something");
       break;
     }
   }
   String line = client.readStringUntil('\n');
+  Serial.println("something else");
 }
 void loop() {
-  ESP.deepSleep(SLEEP_TIME,WAKE_RFCAL);
+  Serial.println("and goodnight");
+  ESP.deepSleep(SLEEP_TIME, WAKE_RFCAL);
   yield();
 }
