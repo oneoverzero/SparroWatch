@@ -59,8 +59,16 @@ void setup() {
   // create final URL
   url = baseurl + "{espvcc:" + voltage + humtem + "}";
 
-  // post data to EmonCMS
-  if (!client.connect(host, 443)) {
+  // try post data to EmonCMS
+  count = 5;
+  while (count >= 0) {
+    if (client.connect(host, 443)) {
+      break;
+    }
+    delay(500);
+    count = count - 1;
+  }
+  if (count == 0){
     return;
   }
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
