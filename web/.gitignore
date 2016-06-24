@@ -38,3 +38,6 @@ jspm_packages
 
 # Auth
 assets/js/auth.js
+
+makerfairescript
+data.json

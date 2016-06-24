@@ -231,7 +231,7 @@
 
 <script type="text/javascript">
 	// GET JSON
-	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/demo.json';
+	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/makerfairescript/data.json';
 
 	$.ajax({
 		method: "GET",
@@ -241,7 +241,7 @@
 		var nodes = [];
 		var markers = [];
 		for (var i = 0; i < data.length; i++) {
-			var array_nodes = [data[i].latitude, data[i].longitude, parseInt(data[i].temperature[0].reading, 10) / 100]; //we divide temperature by 100 to build the heatmap with a correponding gradient
+			var array_nodes = [data[i].latitude, data[i].longitude, parseInt(data[i].temperature.reading, 10) / 100]; //we divide temperature by 100 to build the heatmap with a correponding gradient
 			nodes.push(array_nodes);
 			var array_markers = [data[i].latitude, data[i].longitude];
 			markers.push(array_markers)
@@ -265,7 +265,7 @@
 
 		// get average temperature reading
 		var temperature_array = [];
-		for (var i = 0; i < data.length; i++){ temperature_array.push(data[i].temperature[0].reading) }
+		for (var i = 0; i < data.length; i++){ temperature_array.push(data[i].temperature.reading) }
 		var current_temperature = getAverage(temperature_array);
 		console.log('temperature: ' + current_temperature)
 
@@ -273,7 +273,7 @@
 
 		// get average humidity reading
 		var humidity_array = [];
-		for (var i = 0; i < data.length; i++){ humidity_array.push(data[i].humidity[0].reading) }
+		for (var i = 0; i < data.length; i++){ humidity_array.push(data[i].humidity.reading) }
 		var current_humidity = getAverage(humidity_array);
 		console.log('humidity: ' + current_humidity)
 
@@ -281,7 +281,7 @@
 
 		// get average carbondioxide reading
 		var carbondioxide_array = [];
-		for (var i = 0; i < data.length; i++){ carbondioxide_array.push(data[i].carbondioxide[0].reading) }
+		for (var i = 0; i < data.length; i++){ carbondioxide_array.push(data[i].carbondioxide.reading) }
 		var current_carbondioxide = getAverage(carbondioxide_array);
 		console.log('carbondioxide: ' + current_carbondioxide)
 		
