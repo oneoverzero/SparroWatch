@@ -5,3 +5,11 @@ canvas#humidade{
 	height: 250px;
 	box-sizing: border-box;
 }
+
+div.nav_title > p{
+	font-size: 20px;
+	padding: 10px;
+}
+div.nav_title > p > a {
+	color:#fff;
+}

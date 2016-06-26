@@ -19,6 +19,13 @@
 			<div class="col-md-3 left_col">
 				<div class="navbar nav_title" style="border: 0;">
 					<a href="/" class="site_title"><i class="fa fa-tree"></i> <span>SparroWatch</span></a>
+				
+
+				<p>Estes ninhos vão salvar as nossas florestas.</p>
+
+				<p>Estão equipados com sensores de temperatura para detectar incêndios e usam uma rede em malha para se ligar à Internet sem qualquer necessidade de fios ou instalações complicadas.</p>
+
+				<p>Mais informação em  <a href="http://labs.oneoverzero.org/">labs.oneoverzero.org</a></p>
 				</div>
 			</div>
 			<!-- top nav -->
@@ -232,7 +239,7 @@
 <script type="text/javascript">
 	// GET JSON
 	var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/makerfairescript/data.json';
-
+	//var dataUrl = 'http://labs.brunoamaral.eu/SparroWatch/web/demo.json';
 	$.ajax({
 		method: "GET",
 		dataType: 'json',
@@ -240,6 +247,7 @@
 	}).done(function(data){
 		var nodes = [];
 		var markers = [];
+		console.log(data);
 		for (var i = 0; i < data.length; i++) {
 			var array_nodes = [data[i].latitude, data[i].longitude, parseInt(data[i].temperature.reading, 10) / 100]; //we divide temperature by 100 to build the heatmap with a correponding gradient
 			nodes.push(array_nodes);
@@ -280,10 +288,10 @@
 		buildHumidityChart(current_humidity);
 
 		// get average carbondioxide reading
-		var carbondioxide_array = [];
-		for (var i = 0; i < data.length; i++){ carbondioxide_array.push(data[i].carbondioxide.reading) }
-		var current_carbondioxide = getAverage(carbondioxide_array);
-		console.log('carbondioxide: ' + current_carbondioxide)
+		// var carbondioxide_array = [];
+		// for (var i = 0; i < data.length; i++){ carbondioxide_array.push(data[i].carbondioxide.reading) }
+		// var current_carbondioxide = getAverage(carbondioxide_array);
+		// console.log('carbondioxide: ' + current_carbondioxide)
 		
 		// we don't need this for now.
 		// buildCO2Chart(current_carbondioxide);
@@ -365,8 +373,8 @@
 					yAxes: [{
 						ticks: {
 							max: 30,
-							min: 17,
-							stepSize: 1,
+							min: 12,
+							stepSize: 5,
 						},
 					}],
 				}

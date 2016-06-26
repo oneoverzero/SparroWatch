@@ -4,79 +4,51 @@
     "node_name": "Monsanto 1",
     "latitude": "38.762078", 
     "longitude": "-9.095517",
-    "carbondioxide": [{
+    "carbondioxide": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 20.9
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 0.1009
-    }],
-    "humidity": [{
+    },
+    "humidity": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 10
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 20
-    }],
-    "temperature": [{
+    }, 
+    "temperature": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 25
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 23
-    }]
+    }
   }, {
     "node_id": 2,
     "node_name": "Monsanto 2",
     "latitude": "38.761995",
     "longitude": "-9.093897",
-    "carbondioxide": [{
+    "carbondioxide": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 20.9
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 10.09
-    }],
-    "humidity": [{
+    }, 
+    "humidity": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 10
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 20
-    }],
-    "temperature": [{
+    },
+    "temperature": {
       "timestamp": "2016-06-18T12:46:10.155Z",
       "reading": 20
-    }, {
-      "timestamp": "2016-06-17T12:46:10.155Z",
-      "reading": 23
-    }]
-  },
-  {
+    }
+  }, {
       "node_id": 3,
       "node_name": "Monsanto 3",
       "latitude": "38.760849",
       "longitude": "-9.094873",
-      "carbondioxide": [{
+      "carbondioxide": {
         "timestamp": "2016-06-18T12:46:10.155Z",
         "reading": 20.01
-      }, {
-        "timestamp": "2016-06-17T12:46:10.155Z",
-        "reading": 10.01
-      }],
-      "humidity": [{
+      }, 
+      "humidity": {
         "timestamp": "2016-06-18T12:46:10.155Z",
         "reading": 11
-      }, {
-        "timestamp": "2016-06-17T12:46:10.155Z",
-        "reading": 21
-      }],
-      "temperature": [{
+      }, 
+      "temperature": {
         "timestamp": "2016-06-18T12:46:10.155Z",
         "reading": 30
-      }, {
-        "timestamp": "2016-06-17T12:46:10.155Z",
-        "reading": 10
-      }]
+      } 
     }
 ]
